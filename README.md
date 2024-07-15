@@ -11,23 +11,37 @@ Analicemos juntos el JSON **lottery.json**
 ## Comprobar Los Números Premiados De Una Fecha Específica
 
 1. Debemos realizar una llamada a la API y pasarle la fecha seleccionada por el usuario
-2. La API debe buscar en el JSON los números premiados para esa fecha
+2. La API debe buscar en el JSON los números premiados para esa fecha. Creamos un endpoint con esta ruta
+
+`/api/check-date`
+
 3. En el DIV oculto #numbersResult debemos poner los números premiados para esa fecha. Deben ser 7
 
 ```
 {
+    "message": "Draw found",
     "winningNumbers" = "1 2 3 4 11 22 33 44"
+}
+```
+
+En caso de que no haya sorteo en esa fecha, debemos retornar:
+
+```
+{
+    message: "Draw not found for the given date",
 }
 ```
 
 ## Comprobar Tus Números
 
 1. El usuario introduce una fecha y los números de su boleto separados por espacios
-2. Debemos realizar una llamada a la API y pasarle los datos del punto anterior
+2. Debemos realizar una llamada a la API y pasarle los datos del punto anterior. Creamos un endpoint:
+
+`/api/get-computed-results`
+
 3. La API debe devolver el número de aciertos y el premio obtenido. Por ejemplo su el usuario ha acertado todos los números.
 
 {
-    "winningNumbers" = "1 2 3 4 11 22 33 44",
     "matchNumbers": 7,
     "prize": 1000000
 }
