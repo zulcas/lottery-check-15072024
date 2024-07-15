@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobador de Lotería de Nueva York</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1>Comprobador de Lotería de Nueva York (Usando una API, no EJS 😀)</h1>
+        </header>
+
+        <section class="section">
+            <h2>Comprobar Los Números Premiados De Una Fecha Específica</h2>
+            <form id="checkNumbersForm">
+                <label for="date">Selecciona una fecha:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Comprobar</button>
+            </form>
+            <div id="numbersResult" class="result"></div>
+        </section>
+
+        <section class="section">
+            <h2>Comprobar Tus Números</h2>
+            <form id="checkYourNumberForm">
+                <label for="yourDate">Selecciona una fecha:</label>
+                <input type="date" id="yourDate" name="yourDate" required>
+                <label for="yourNumbers">Introduce tus números (separados por espacio):</label>
+                <input type="text" id="yourNumbers" name="yourNumbers" placeholder="Ejemplo: 12 34 56 78 90 12 34"
+                    required pattern="\d+(\s\d+){0,6}">
+                <button type="submit">Comprobar</button>
+            </form>
+            <div id="yourNumberResult" class="result"></div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelector('#checkNumbersForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const date = document.getElementById('date').value;
+            // TODO: Realizar llamada al servidor
+        });
+
+        document.querySelector('#checkYourNumberForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const date = document.getElementById('yourDate').value;
+            const yourNumbers = document.getElementById('yourNumbers').value.split(' ');
+            // TODO: Realizar llamada al servidor
+        });
+    </script>
+</body>
+
+</html>

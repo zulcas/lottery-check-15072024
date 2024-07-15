@@ -1,0 +1,42 @@
+[
+    {
+        "position": 0,
+        "match_numbers": 0,
+        "prize": 0
+    },
+    {
+        "position": 1,
+        "match_numbers": 1,
+        "prize": 10
+    },
+    {
+        "position": 2,
+        "match_numbers": 2,
+        "prize": 20
+    },
+    {
+        "position": 3,
+        "match_numbers": 3,
+        "prize": 50
+    },
+    {
+        "position": 4,
+        "match_numbers": 4,
+        "prize": 100
+    },
+    {
+        "position": 5,
+        "match_numbers": 5,
+        "prize": 1000
+    },
+    {
+        "position": 6,
+        "match_numbers": 6,
+        "prize": 50000
+    },
+    {
+        "position": 7,
+        "match_numbers": 7,
+        "prize": 1000000
+    }
+]
