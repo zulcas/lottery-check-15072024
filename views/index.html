@@ -16,7 +16,7 @@
 
         <section class="section">
             <h2>Comprobar Los Números Premiados De Una Fecha Específica</h2>
-            <form id="checkNumbersForm">
+            <form id="checkNumbersForm" method="get" action="/api/check-date">
                 <label for="date">Selecciona una fecha:</label>
                 <input type="date" id="date" name="date" required>
                 <button type="submit">Comprobar</button>
@@ -45,13 +45,22 @@
             e.preventDefault();
             const date = document.getElementById('date').value;
             // TODO: Realizar llamada al servidor. Procesar los datos y rellenar adecuadamente el DIV
+            //1) método fech para conectarnos a la api
+            const response = await fetch(`/api/check-date?date=${date}`);
+            console.log(response);
+            const data = response.json();
+            console.log(data);
+            document.querySelector('#numbersResult').value = data.winningNumbers;
         });
 
         document.querySelector('#checkYourNumberForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const date = document.getElementById('yourDate').value;
             const yourNumbers = document.getElementById('yourNumbers').value;
-            // TODO: Realizar llamada al servidor. Procesar los datos y rellenar adecuadamente el DIV        
+            // TODO: Realizar llamada al servidor. Procesar los datos y rellenar adecuadamente el DIV   
+            
+
+
         });
     </script>
 </body>
